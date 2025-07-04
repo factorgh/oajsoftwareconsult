@@ -7,7 +7,7 @@ interface HeroProps {
   onGetStarted: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
+export const Hero: React.FC<HeroProps> = () => {
   const features = [
     'Custom Software Development',
     'Cloud & DevOps Solutions',
@@ -109,7 +109,7 @@ export const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
               transition={{ duration: 0.6, delay: 1.2 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Button size="lg" onClick={onGetStarted} icon={ArrowRight} className="bg-primary-600 hover:bg-primary-700">
+              <Button size="lg" onClick={() => {}} icon={ArrowRight} className="bg-primary-600 hover:bg-primary-700">
                 Get Started Today
               </Button>
               <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
