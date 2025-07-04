@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Code, User, Settings, LogOut } from 'lucide-react';
-import { Button } from '../ui/Button';
+
 import { useAuth } from '../../hooks/useAuth';
 
 interface HeaderProps {
-  onMenuToggle: () => void;
   currentPage: string;
   onPageChange: (page: string) => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onMenuToggle, currentPage, onPageChange }) => {
+export const Header: React.FC<HeaderProps> = ({ currentPage, onPageChange }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const { user, logout } = useAuth();
@@ -112,9 +111,10 @@ export const Header: React.FC<HeaderProps> = ({ onMenuToggle, currentPage, onPag
                 )}
               </div>
             ) : (
-              <Button onClick={() => onPageChange('login')}>
-                Get Started
-              </Button>
+              <></>
+              // <Button onClick={() => onPageChange('login')}>
+              //   Get Started
+              // </Button>
             )}
 
             {/* Mobile menu button */}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FolderOpen, Ticket, MessageSquare, FileText, Clock, CheckCircle } from 'lucide-react';
+import { FolderOpen, Ticket, MessageSquare, Clock, CheckCircle } from 'lucide-react';
 import { Card } from '../ui/Card';
 import { Badge } from '../ui/Badge';
 import { Button } from '../ui/Button';

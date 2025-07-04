@@ -148,14 +148,14 @@ export const Contact: React.FC = () => {
                     <Input
                       label="Company"
                       placeholder="Your company name"
-                      value={formData.company}
+                      value={formData.company!}
                       onChange={(value) => setFormData({ ...formData, company: value })}
                     />
                     <Input
                       label="Phone"
                       type="tel"
                       placeholder="(555) 123-4567"
-                      value={formData.phone}
+                      value={formData.phone!}
                       onChange={(value) => setFormData({ ...formData, phone: value })}
                     />
                   </div>
@@ -184,7 +184,7 @@ export const Contact: React.FC = () => {
                   <TextArea
                     label="Message"
                     placeholder="Tell us about your project..."
-                    value={formData.message}
+                    value={formData.message!}
                     onChange={(value) => setFormData({ ...formData, message: value })}
                     rows={5}
                     required

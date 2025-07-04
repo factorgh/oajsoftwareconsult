@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, Quote, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Star, Quote,  } from 'lucide-react';
 import { Card } from '../ui/Card';
 import { testimonials } from '../../data/mockData';
 

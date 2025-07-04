@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
@@ -141,7 +141,6 @@ export default function App() {
     <div className="min-h-screen bg-white">
       {currentPage !== 'login' && currentPage !== 'client' && currentPage !== 'admin' && (
         <Header 
-          onMenuToggle={() => {}} 
           currentPage={currentPage}
           onPageChange={setCurrentPage}
         />
