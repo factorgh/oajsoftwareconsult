@@ -7,7 +7,7 @@ interface HeroProps {
   onGetStarted: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = () => {
+export const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
   const features = [
     'Custom Software Development',
     'Cloud & DevOps Solutions',
@@ -16,15 +16,33 @@ export const Hero: React.FC<HeroProps> = () => {
   ];
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black min-h-screen flex items-center">
-      {/* Background Video/Image */}
+    <div className="relative overflow-hidden bg-black min-h-screen flex items-center">
+      {/* Video Background */}
       <div className="absolute inset-0">
-        <img
-          src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg"
-          alt="Technology Background"
-          className="w-full h-full object-cover opacity-20"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover opacity-100"
+          onError={(e) => console.error('Video failed to load:', e)}
+        >
+          <source
+            src="/src/assets/oaj.mp4"
+            type="video/mp4"
+          />
+          <source
+            src="/src/assets/oaj.webm"
+            type="video/webm"
+          />
+          {/* Fallback image if video doesn't load */}
+          <img
+            src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg"
+            alt="Technology Background"
+            className="w-full h-full object-cover"
+          />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
       </div>
 
       {/* Floating Elements */}
@@ -109,7 +127,7 @@ export const Hero: React.FC<HeroProps> = () => {
               transition={{ duration: 0.6, delay: 1.2 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Button size="lg" onClick={() => {}} icon={ArrowRight} className="bg-primary-600 hover:bg-primary-700">
+              <Button size="lg" onClick={onGetStarted} icon={ArrowRight} className="bg-primary-600 hover:bg-primary-700">
                 Get Started Today
               </Button>
               <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
