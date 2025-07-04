@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle, Play } from 'lucide-react';
 import { Button } from '../ui/Button';
+import videoSrc from '../../assets/oaj.mp4';
 
 interface HeroProps {
   onGetStarted: () => void;
@@ -28,11 +29,11 @@ export const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
           onError={(e) => console.error('Video failed to load:', e)}
         >
           <source
-            src="/src/assets/oaj.mp4"
+            src={videoSrc}
             type="video/mp4"
           />
           <source
-            src="/src/assets/oaj.webm"
+            src={videoSrc}
             type="video/webm"
           />
           {/* Fallback image if video doesn't load */}
